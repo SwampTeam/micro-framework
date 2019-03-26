@@ -1,0 +1,15 @@
+{
+    "name": "student/composer-101",
+    "description": "Experimenting",
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "Marco L Abreu",
+            "email": "marcolabreu@windows.example.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require": {
+        "symfony/routing": "^4.2@stable"
+    }
+}
