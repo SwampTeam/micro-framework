@@ -3,10 +3,10 @@
 return [
   'DB' => [
       'driver' => 'mysql',
-      'dbname' => 'somename',
+      'dbname' => 'framework',
       'host' => 'localhost',
-      'user' => 'root',
-      'password' => null,
+      'user' => 'debian-sys-maint',
+      'password' => 'kTAfY4463eRP9Q4Z',
       'port' => 3306
   ]
 ];

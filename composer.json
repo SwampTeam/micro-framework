@@ -1,20 +1,22 @@
 {
-    "name": "student/micro-framework",
-    "description": "A tiny, really small, almost invisible framework",
-    "license": "proprietary",
-    "authors": [
-        {
-            "name": "Marco L Abreu",
-            "email": "marcolabreu@windows.example.com"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {
-        "symfony/routing": "^4.2@stable"
-    },
-    "autoload": {
-        "psr-4": {
-            "\\": "src/"
-        }
+  "name": "student/micro-framework",
+  "description": "A tiny, really small, almost invisible framework",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Marco L Abreu",
+      "email": "marcolabreu@windows.example.com"
     }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "symfony/routing": "^4.2@stable",
+    "ext-pdo": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Database\\": "src/Database/",
+      "": "src"
+    }
+  }
 }
