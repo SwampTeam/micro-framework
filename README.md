@@ -2,14 +2,20 @@
 
 
 ## Public
-* public (in root folder)
-* entry point (in public folder)
+* public folder (in root)
+* entry point file (in public folder)
 
-## Internal
+## Starting
+* bootstrap file
 * config (root folder)
-* DB
-* bootstrap
-* model
-* view
+
+## What is missing?
+
+## Logic
 * controller
+* view
+
+## Data
+* model
+* DB
 
