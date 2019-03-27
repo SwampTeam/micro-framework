@@ -17,5 +17,6 @@
 
 ## Data
 * model
-* DB
 
+### DB, one connection 
+Singleton is the simplest pattern to be used, no dependency injection. Object Pool (or container) is the best one for the job, but requires dependency injection in each element. Symfony has it build in.
