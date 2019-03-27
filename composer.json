@@ -1,15 +1,20 @@
 {
-    "name": "student/composer-101",
-    "description": "Experimenting",
-    "license": "BSD",
+    "name": "student/micro-framework",
+    "description": "A tiny, really small, almost invisible framework",
+    "license": "proprietary",
     "authors": [
         {
             "name": "Marco L Abreu",
             "email": "marcolabreu@windows.example.com"
         }
     ],
-    "minimum-stability": "beta",
+    "minimum-stability": "stable",
     "require": {
         "symfony/routing": "^4.2@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "\\": "src/"
+        }
     }
 }
