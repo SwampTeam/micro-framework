@@ -7,16 +7,17 @@ $parkPlaces = ParkPlace::findAll();
 
 //echo($park['id']);
 foreach ($parkPlaces as $parkPlace) { ?>
-<table>
-    <b><?php echo $parkPlace->getType(); ?></b>
-    <?php echo $parkPlace->getNumber(); ?>
+<table><tr>
+
+    <td><b><?php echo $parkPlace->getType(); ?></b></td>
+        <td><?php echo $parkPlace->getNumber(); ?></td>
     <?php
     if ($parkPlace->isOccupied() == 0) {
-        echo "<span style='color:green'>Parking is free</span>";
+        echo "<td><span style='color:green'>Parking is free</span></td>";
     }else{
-        echo "<span style='color:red'>Parking is in use</span>";
+        echo "<td><span style='color:red'>Parking is in use</span></td>";
     } ?>
     <?php
     }
-    ?>
+    ?></tr>
 </table>
