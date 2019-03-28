@@ -3,7 +3,7 @@
 
 # Micro-Framework
 
-Clone the repo, create a file named *config/config-local.php*, copy the code of *config/config.php* and change the SQL login parameter to your local server. 
+Clone the repo, create a file named *config/local-config.php*, copy the code of *config/config.php* and change the SQL login parameter to your local server. 
 
 
 ## Public
