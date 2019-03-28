@@ -8,11 +8,16 @@ $parkPlaces = ParkPlace::findAll();
 //echo($park['id']);
 ?>
 <table>
-    <tr><th>Type</th><th>Place #</th><th>Availability</th><th>edit</th></tr>
+    <tr>
+        <th>Type</th>
+        <th>Place #</th>
+        <th>Availability</th>
+        <th>edit</th>
+    </tr>
     <?php
-foreach ($parkPlaces
+    foreach ($parkPlaces
 
-as $parkPlace) { ?>
+    as $parkPlace) { ?>
 
     <tr>
         <td><b><?php echo $parkPlace->getType(); ?></b></td>
@@ -23,7 +28,9 @@ as $parkPlace) { ?>
         } else {
             echo "<td><span style='color:red'>Parking is in use</span></td>";
         } ?>
-        <td><a href="update.php?id=<?php echo $parkPlace->getId(); ?>"><img src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/edit-icon.png" width="20px"></a></td>
+        <td><a href="update.php?id=<?php echo $parkPlace->getId(); ?>"><img
+                        src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/edit-icon.png"
+                        width="20px"></a></td>
         <?php
         }
         ?>
