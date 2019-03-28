@@ -1,4 +1,9 @@
-# Project minimal scope
+
+
+
+# Micro-Framework
+
+Clone the repo, create a file named *config/config.php*, copy the code of *config/config.php* and change the SQL login parameter to your local server. 
 
 
 ## Public
