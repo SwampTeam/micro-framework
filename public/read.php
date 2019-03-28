@@ -4,8 +4,6 @@ require_once __DIR__ . '/../src/bootstrap.php';
 use Model\ParkPlace;
 
 $parkPlaces = ParkPlace::findAll();
-
-//echo($park['id']);
 ?>
 <table>
     <tr>
@@ -34,6 +32,5 @@ $parkPlaces = ParkPlace::findAll();
         <?php
         }
         ?>
-
     </tr>
 </table>
