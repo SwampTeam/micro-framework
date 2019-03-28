@@ -6,18 +6,23 @@ use Model\ParkPlace;
 $parkPlaces = ParkPlace::findAll();
 
 //echo($park['id']);
-foreach ($parkPlaces as $parkPlace) { ?>
-<table><tr>
+foreach ($parkPlaces
 
-    <td><b><?php echo $parkPlace->getType(); ?></b></td>
+as $parkPlace) { ?>
+<table>
+    <tr>
+        <td><b><?php echo $parkPlace->getType(); ?></b></td>
         <td><?php echo $parkPlace->getNumber(); ?></td>
-    <?php
-    if ($parkPlace->isOccupied() == 0) {
-        echo "<td><span style='color:green'>Parking is free</span></td>";
-    }else{
-        echo "<td><span style='color:red'>Parking is in use</span></td>";
-    } ?>
-    <?php
-    }
-    ?></tr>
+        <?php
+        if ($parkPlace->isOccupied() == 0) {
+            echo "<td><span style='color:green'>Parking is free</span></td>";
+        } else {
+            echo "<td><span style='color:red'>Parking is in use</span></td>";
+        } ?>
+        <td><a href="update.php?id=<?php echo $parkPlace->getId(); ?>"><img src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/edit-icon.png" width="20px"></a></td>
+        <?php
+        }
+        ?>
+
+    </tr>
 </table>
