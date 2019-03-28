@@ -28,9 +28,8 @@ $parkPlaces = ParkPlace::findAll();
         } ?>
         <td><a href="update.php?id=<?php echo $parkPlace->getId(); ?>"><img
                         src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/512/edit-icon.png"
-                        width="20px"></a></td>
+                        width="20px"></a></td></tr>
         <?php
         }
         ?>
-    </tr>
 </table>
