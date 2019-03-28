@@ -13,7 +13,7 @@ class DBConnection
     }
 
     /**
-     * @return mixed
+     * @return \PDO
      */
     public static function getConnection()
     {
@@ -32,6 +32,7 @@ class DBConnection
             self::$configuration['user'],
             self::$configuration['password']
         );
+        return self::$connection;
     }
 }
 
