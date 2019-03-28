@@ -6,10 +6,14 @@ use Model\ParkPlace;
 $parkPlaces = ParkPlace::findAll();
 
 //echo($park['id']);
+?>
+<table>
+    <tr><th>Type</th><th>Place #</th><th>Availability</th><th>edit</th></tr>
+    <?php
 foreach ($parkPlaces
 
 as $parkPlace) { ?>
-<table>
+
     <tr>
         <td><b><?php echo $parkPlace->getType(); ?></b></td>
         <td><?php echo $parkPlace->getNumber(); ?></td>
