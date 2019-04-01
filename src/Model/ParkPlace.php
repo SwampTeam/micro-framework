@@ -4,6 +4,7 @@ namespace Model;
 
 use Database\DBConnection;
 
+
 class ParkPlace implements CrudInterface
 {
     private $id;
@@ -161,6 +162,78 @@ class ParkPlace implements CrudInterface
           WHERE id = :id
           ');
         return $stmt->execute(['id' => $id]);
+    }
+
+    public function homepageAction()
+    {
+        include __DIR__ . '/../../public/read.php';
+    }
+
+    public function updateAction()
+    {
+        if (empty($_GET['id'])) {
+            include __DIR__ . '/../../public/404.html';
+            return;
+        }
+        $parkPlace = ParkPlace::read($_GET['id']);
+        if (empty($parkPlace)) {
+            include __DIR__ . '/../../public/404.html';
+            return;
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $_POST['occupied'] = ($_POST['occupied'] ?? null) === 'on' ? 1 : 0;
+            $parkPlace->update($parkPlace->getId(), $_POST);
+            header('Location: ./');
+            return;
+        }
+
+        include __DIR__ . '/../../public/update.php';
+    }
+
+    public function deleteAction()
+    {
+        if (empty($_GET['id'])) {
+            include __DIR__ . '/../../public/404.html';
+            return;
+        }
+        $parkPlace = ParkPlace::read($_GET['id']);
+        if (empty($parkPlace)) {
+            include __DIR__ . '/../../public/404.html';
+            return;
+        }
+        $parkPlace->delete($parkPlace->getId());
+        header('Location: ./');
+        return;
+    }
+
+    public function createAction()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $errors = [];
+            if (empty($_POST['number'])) {
+                $errors['number'] = 'Number could not be blank';
+            }
+            if (strlen($_POST['number']) > 10) {
+                $errors['number'] = 'Number cannot be longer than 10 characters';
+            }
+            if (!in_array($_POST['type'], ['normal', 'woman', 'fire'])) {
+                $errors['type'] = 'Type can only be normal, woman or fire';
+            }
+
+            if (empty($errors)) {
+                $_POST['occupied'] = ($_POST['occupied'] ?? null) === 'on' ? 1 : 0;
+                $parkPlace = new ParkPlace();
+                $parkPlace->setType($_POST['type'])
+                    ->setOccupied($_POST['occupied'])
+                    ->setNumber($_POST['number']);
+                $parkPlace->create([]);
+
+                header('Location: ./');
+                return;
+            }
+        }
+        include __DIR__ . '/../../public/create.php';
     }
 
 }
